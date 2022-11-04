@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	import '../app.css';
 	import MainMenu from '$lib/MainMenu/MainMenu.svelte';
 	import Notifications from '$lib/DisplayNotifications.svelte';
@@ -6,8 +6,19 @@
 	import { navigating } from '$app/stores';
 	import { notifications } from '$lib/notifications';
 
+	let isNavigating = false;
+	let navigatingTimer: NodeJS.Timeout | undefined = undefined;
 	// Clear notifications on navigation
-	// navigating.subscribe( () => notifications.update( () => []) )
+	navigating.subscribe((nav) => {
+		if (nav && !navigatingTimer) {
+			navigatingTimer = setTimeout(() => (isNavigating = true), 500);
+		} else if (!nav) {
+			isNavigating = false;
+			clearTimeout(navigatingTimer);
+			navigatingTimer = undefined;
+		}
+		notifications.update(() => []);
+	});
 
 	// import Fa from "svelte-fa/src/fa.svelte";
 	// import Index from "./peopleLoad/index.svelte";
@@ -38,11 +49,11 @@
 		<div class="flex-1 flex">
 			<div class="px-6 py-4 flex-1 overflow-y-auto relative">
 				<div
-					style="opacity: {$navigating ? 100 : 0}; display: {$navigating ? 'block' : 'none'};"
-					class="fixed bottom-0 right-0 w-full h-full flex justify-center content-end pl-72 pt-24 p-8 transition-opacity duration-300 delay-200 ease-in"
+					style="opacity: {isNavigating ? 100 : 0}; display: {isNavigating ? 'block' : 'none'};"
+					class="fixed bottom-0 right-0 w-full h-full flex justify-center content-end pl-72 pt-24 p-8 ease-in"
 				>
 					<svg
-						style="opacity: {$navigating ? 100 : 0};"
+						style="opacity: {isNavigating ? 100 : 0};"
 						class="animate-spin h-full w-full"
 						fill="none"
 						viewBox="0 0 24 24"
