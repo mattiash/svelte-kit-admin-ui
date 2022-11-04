@@ -1,5 +1,5 @@
 <script lang="ts">
-	import '../app.css';
+	import '../app.postcss';
 	import MainMenu from '$lib/MainMenu/MainMenu.svelte';
 	import Notifications from '$lib/DisplayNotifications.svelte';
 

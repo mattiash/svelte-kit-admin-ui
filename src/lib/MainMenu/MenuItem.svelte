@@ -12,7 +12,7 @@
 	<a href={path}>{title}</a>
 </li>
 
-<style lang="scss">
+<style>
 	li {
 		@apply pl-2;
 	}
