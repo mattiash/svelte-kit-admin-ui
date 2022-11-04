@@ -34,6 +34,8 @@
 	},
 	"type": "module",
 	"dependencies": {
-		"@sveltejs/adapter-static": "^1.0.0-next.47"
+		"@fortawesome/free-solid-svg-icons": "^6.2.0",
+		"@sveltejs/adapter-static": "^1.0.0-next.47",
+		"svelte-fa": "^3.0.3"
 	}
 }
