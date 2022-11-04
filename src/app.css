@@ -1,3 +1,51 @@
+@import url('https://rsms.me/inter/inter.css');
+
+/* Write your global styles here, in PostCSS syntax */
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+@layer base {
+	@supports (font-variation-settings: normal) {
+		html {
+			font-family: 'Inter var', sans-serif;
+		}
+	}
+
+	* {
+		@apply font-sans;
+	}
+
+	h1 {
+		@apply text-2xl;
+		font-weight: 500;
+		@apply mb-2;
+	}
+	h2 {
+		@apply text-xl;
+	}
+
+	/* Table styling from tailwind ui examples */
+	table.tablesort {
+		@apply min-w-full divide-y divide-gray-200;
+	}
+
+	table.tablesort thead tr {
+		@apply bg-gray-50;
+	}
+	table.tablesort thead tr th {
+		@apply px-6 py-3 text-left text-xs font-medium text-gray-500 uppercase tracking-wider;
+	}
+
+	table.tablesort tbody {
+		@apply bg-white divide-y divide-gray-200;
+	}
+
+	table.tablesort tbody tr {
+		@apply bg-white divide-y divide-gray-200;
+	}
+
+	table.tablesort tbody td {
+		@apply px-6 py-4 whitespace-nowrap;
+	}
+}
