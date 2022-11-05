@@ -17,3 +17,7 @@ Serving:
 npm run dev
 cd build; npx serve -s .
 ```
+
+## Demo site
+
+This repository is published to https://cheery-sunshine-f2d9e4.netlify.app/
