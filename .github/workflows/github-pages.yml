@@ -23,8 +23,7 @@ jobs:
       - name: Build
         run: npm run build
 
-      - name: Publish generated content to GitHub Pages
-        uses: tsunematsu21/actions-publish-gh-pages@v1.0.2
+      - name: Deploy 🚀
+        uses: JamesIves/github-pages-deploy-action@v4
         with:
-          dir: build
-          branch: gh-pages
+          folder: build
