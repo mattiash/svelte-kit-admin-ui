@@ -1,0 +1,1 @@
+const s=async({fetch:t})=>({items:(await(await t("https://swapi.dev/api/people")).json()).results.map(e=>({...e,id:e.url.match(/\/(\d+)\/$/)[1]}))}),p=Object.freeze(Object.defineProperty({__proto__:null,load:s},Symbol.toStringTag,{value:"Module"}));export{p as _,s as l};

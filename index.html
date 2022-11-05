@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<style>
+			/* Don't show anything until rest of css loaded */
+			body {
+				opacity: 0;
+			}
+		</style>
+		<meta charset="utf-8" />
+		<link rel="icon" href="/favicon.png" />
+		<meta name="viewport" content="width=device-width" />
+		<meta http-equiv="content-security-policy" content="">
+		<link rel="modulepreload" href="/_app/immutable/start-b9873dba.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/index-2790eb25.js">
+		<link rel="modulepreload" href="/_app/immutable/chunks/singletons-80be6678.js">
+	</head>
+	<body>
+		<div>
+		<script type="module" data-sveltekit-hydrate="45h">
+			import { start } from "/_app/immutable/start-b9873dba.js";
+
+			start({
+				env: {},
+				hydrate: null,
+				paths: {"base":"","assets":""},
+				target: document.querySelector('[data-sveltekit-hydrate="45h"]').parentNode,
+				trailing_slash: "never"
+			});
+		</script></div>
+	</body>
+</html>
