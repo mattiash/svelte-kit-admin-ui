@@ -10,7 +10,8 @@ module.exports = {
 				// transparent: 'transparent',
 				// current: 'currentColor',
 				primary: {
-					light: colors.indigo[200]
+					light: colors.indigo[200],
+					lighter: colors.indigo[100]
 				},
 				secondary: {
 					light: colors.green[200]
