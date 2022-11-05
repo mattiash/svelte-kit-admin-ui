@@ -8,6 +8,7 @@
 
 	let isNavigating = false;
 	let navigatingTimer: NodeJS.Timeout | undefined = undefined;
+
 	// Clear notifications on navigation
 	navigating.subscribe((nav) => {
 		if (nav && !navigatingTimer) {

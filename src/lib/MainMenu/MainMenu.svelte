@@ -10,6 +10,8 @@
 			<MenuItem title="Index" path="/" re={/^\/$/} />
 			<MenuItem title="Colors" path="/colors" />
 			<MenuItem title="Slow" path="/slow" />
+			<MenuItem title="Notifications" path="/notifications" />
+			<MenuItem title="Not found" path="/nosuchpage" />
 		</SubMenu>
 		<SubMenu title="Star wars" show={true}>
 			<MenuItem title="People" path="/people" />

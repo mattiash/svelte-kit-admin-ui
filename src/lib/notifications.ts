@@ -1,19 +1,23 @@
 import { writable } from 'svelte/store';
 
-export const notifications = writable([]);
+interface Notification {
+	id: number;
+	title: string;
+	msg: string;
+	type: 'info' | 'error';
+}
 
-let notnum = 0;
+export const notifications = writable<Notification[]>([]);
 
-export function notifyInfo(msg: string) {
-	notnum = notnum + 1;
-	msg = msg + ' ' + notnum;
-	const notification = { msg, type: 'info', id: Date.now() };
+let id = 0;
+export function notifyInfo(title: string, msg: string) {
+	const notification: Notification = { id: id++, title, msg, type: 'info' };
 	notifications.update((old) => [...old, notification]);
 	setTimeout(() => notifications.update((old) => [...old.filter((n) => n !== notification)]), 3000);
 }
 
-export function notifyError(msg: string) {
-	const notification = { msg, type: 'error' };
+export function notifyError(title: string, msg: string) {
+	const notification: Notification = { id: id++, title, msg, type: 'error' };
 	notifications.update((old) => [...old, notification]);
 	setTimeout(() => notifications.update((old) => [...old.filter((n) => n !== notification)]), 3000);
 }

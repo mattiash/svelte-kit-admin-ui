@@ -1,3 +1,1 @@
-<h1 class="text-3xl font-bold underline">Hello world!</h1>
-
-<a href="people">People</a>
+<h1>svelte-kit-admin-ui</h1>
