@@ -5,7 +5,7 @@
 </script>
 
 <div transition:slide={{ duration: 200 }}>
-	<aside class="menu">
+	<aside class="menu mx-2">
 		<SubMenu title="Test" show={true}>
 			<MenuItem title="Index" path="/" re={/^\/$/} />
 			<MenuItem title="Colors" path="/colors" />
