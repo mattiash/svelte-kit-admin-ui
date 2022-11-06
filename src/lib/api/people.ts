@@ -29,7 +29,6 @@ function wireToApi(item: PersonWire): Person {
 	const idMatch = item.url.match(/\/(\d+)\/$/);
 	if (idMatch) {
 		const id = idMatch[1];
-		console.log(idMatch, id);
 		return {
 			...item,
 			height: parseInt(item.height),

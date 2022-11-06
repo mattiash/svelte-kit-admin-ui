@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { notifyInfo, notifyError } from '$lib/notifications';
-	import Button from '$lib/Button.svelte';
+	import { Button } from '$lib/elements';
 	function addInfoNotification() {
 		notifyInfo('Hello', 'This is an info message');
 	}

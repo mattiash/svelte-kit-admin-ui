@@ -1,12 +1,8 @@
 <script lang="ts">
-	import Form from '$lib/Forms/Form.svelte';
-	import Text from '$lib/Forms/Text.svelte';
-	import Number from '$lib/Forms/Number.svelte';
 	import type { PageData } from './$types';
-	import Select from '$lib/Forms/Select.svelte';
-	import Button from '$lib/Button.svelte';
 	import { hair_color_options } from '$lib/api/people';
 	import { notifyInfo } from '$lib/notifications';
+	import { Form, Text, Number, Select, Button } from '$lib/elements';
 
 	export let data: PageData;
 
