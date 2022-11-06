@@ -1,10 +1,7 @@
 import type { PageLoad } from './$types';
-
+import { get } from '$lib/api/people';
 export const load: PageLoad = async ({ params, fetch }) => {
-	const resp = await fetch(`https://swapi.dev/api/people/${params.id}`);
-	const item = await resp.json();
-	console.log(item, resp.status);
 	return {
-		item: item
+		item: await get(fetch, params.id)
 	};
 };
