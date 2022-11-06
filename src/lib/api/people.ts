@@ -23,10 +23,13 @@ interface PersonWire {
 	url: string;
 }
 
+export const hair_color_options = ['blond', 'brown', 'none', 'n/a'];
+
 function wireToApi(item: PersonWire): Person {
 	const idMatch = item.url.match(/\/(\d+)\/$/);
 	if (idMatch) {
 		const id = idMatch[1];
+		console.log(idMatch, id);
 		return {
 			...item,
 			height: parseInt(item.height),
@@ -48,7 +51,7 @@ export async function get(fetch: Fetch, id: string): Promise<Person> {
 	const resp = await fetch(`https://swapi.dev/api/people/${id}`);
 	if (resp.ok) {
 		const item = await resp.json();
-		return item;
+		return wireToApi(item);
 	} else {
 		throw error(404);
 	}

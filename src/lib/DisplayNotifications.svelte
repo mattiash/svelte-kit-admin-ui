@@ -4,9 +4,6 @@
 	import { fade } from 'svelte/transition';
 </script>
 
-<div>
-	{$notifications.map((n) => n.msg).join('-')}
-</div>
 <div class="fixed bottom-0 right-0">
 	{#each $notifications as notification (notification.id)}
 		<div
