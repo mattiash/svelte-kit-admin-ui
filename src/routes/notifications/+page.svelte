@@ -1,6 +1,6 @@
 <script lang="ts">
 	import { notifyInfo, notifyError } from '$lib/notifications';
-
+	import Button from '$lib/Button.svelte';
 	function addInfoNotification() {
 		notifyInfo('Hello', 'This is an info message');
 	}
@@ -12,17 +12,6 @@
 
 <main>
 	<h1>Notifications</h1>
-	<div class="my-4">
-		<button
-			class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-md shadow-sm"
-			on:click={addInfoNotification}>Info notification</button
-		>
-	</div>
-	<div class="my-4">
-		<button
-			class="px-4 py-2 font-semibold text-sm bg-cyan-500 text-white rounded-md shadow-sm"
-			on:click={addErrorNotification}
-			href="#">Error notification</button
-		>
-	</div>
+	<Button on:click={addInfoNotification}>Info notification</Button>
+	<Button on:click={addErrorNotification}>Error notification</Button>
 </main>
