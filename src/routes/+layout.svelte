@@ -1,7 +1,7 @@
 <script lang="ts">
 	import '../app.postcss';
-	import MainMenu from '$lib/MainMenu/MainMenu.svelte';
-	import Notifications from '$lib/DisplayNotifications.svelte';
+	import MainMenu from '$lib/elements/MainMenu/MainMenu.svelte';
+	import Notifications from '$lib/elements/DisplayNotifications.svelte';
 
 	import { navigating } from '$app/stores';
 	import { notifications } from '$lib/notifications';

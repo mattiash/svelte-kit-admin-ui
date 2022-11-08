@@ -1,6 +1,5 @@
 <script lang="ts">
-	import TableSort from '$lib/TableSort.svelte';
-	import { onMount } from 'svelte';
+	import TableSort from '$lib/elements/TableSort.svelte';
 	import { goto } from '$app/navigation';
 
 	import type { PageData } from './$types';
