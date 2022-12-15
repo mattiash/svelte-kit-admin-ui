@@ -98,7 +98,7 @@
 	</tfoot>
 </table>
 
-<style lang="scss">
+<style>
 	thead :global(th.sortable) {
 		cursor: pointer;
 		user-select: none;
