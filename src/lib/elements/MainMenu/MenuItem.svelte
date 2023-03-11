@@ -9,10 +9,11 @@
 	$: reAuto = re ? re : new RegExp(`^${path}\\b`);
 </script>
 
+<!-- svelte-ignore a11y-click-events-have-key-events -->
 <li
 	class="hover:bg-primary-lighter pl-2 cursor-pointer"
 	class:bg-primary-light={$page.url.pathname.match(reAuto)}
-	on:click={goto(path)}
+	on:click={() => goto(path)}
 >
 	<a href={path}>{title}</a>
 </li>

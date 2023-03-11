@@ -1,4 +1,4 @@
-<script>
+<script lang="ts">
 	const CLASSNAME_TABLE = 'tablesort';
 	const CLASSNAME_SORTABLE = 'sortable';
 	const CLASSNAME_ASC = 'ascending';
@@ -6,16 +6,16 @@
 
 	import { onMount } from 'svelte';
 	import { sortFunction, compareStrings, compareNumbers } from '../generator-sort';
-	export let items;
+	export let items: any[];
 	let className = '';
 	export { className as class };
 
-	let thead;
-	let sortOrder = [[]];
+	let thead: HTMLTableSectionElement;
+	let sortOrder: [string, number][] = [];
 
 	$: sortedItems = sorted([...items], sortOrder);
 
-	const sorted = function (arr, sortOrder) {
+	const sorted = function (arr: any[], sortOrder: [string, number][]) {
 		arr.sort(
 			sortFunction(function* (a, b) {
 				for (let [fieldName, r] of sortOrder) {
@@ -32,8 +32,8 @@
 		return arr;
 	};
 
-	function updateSortOrder(th, push) {
-		const fieldName = th.dataset.sort;
+	function updateSortOrder(th: HTMLTableCellElement, push: boolean) {
+		const fieldName = th.dataset.sort || 'not-specified';
 		if (push) {
 			if (sortOrder[sortOrder.length - 1][0] === fieldName) {
 				sortOrder[sortOrder.length - 1] = [fieldName, (sortOrder[sortOrder.length - 1][1] + 1) % 2];
@@ -75,10 +75,10 @@
 			}
 			if (th[i].dataset.sortInitial === 'descending') {
 				th[i].className = th[i].dataset.orgClass + ' ' + CLASSNAME_SORTABLE + ' ' + CLASSNAME_DESC;
-				sortOrder = [...sortOrder, [th[i].dataset.sort, 1]];
+				sortOrder = [...sortOrder, [th[i].dataset.sort || 'not-specified', 1]];
 			} else if (th[i].dataset.sortInitial != undefined) {
 				th[i].className = th[i].dataset.orgClass + ' ' + CLASSNAME_SORTABLE + ' ' + CLASSNAME_ASC;
-				sortOrder = [...sortOrder, [th[i].dataset.sort, 0]];
+				sortOrder = [...sortOrder, [th[i].dataset.sort || 'not-specified', 0]];
 			}
 		}
 	});
