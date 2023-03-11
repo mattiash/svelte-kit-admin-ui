@@ -1,10 +1,9 @@
 <script lang="ts">
-	import type { PageData } from './$types';
 	import { hair_color_options } from '$lib/api/people';
 	import { notifyInfo } from '$lib/notifications';
 	import { Form, Text, Number, Select, Button } from '$lib/elements';
 
-	export let data: PageData;
+	export let data;
 
 	function submit() {
 		notifyInfo('Submit', 'Not implemented. See console');
