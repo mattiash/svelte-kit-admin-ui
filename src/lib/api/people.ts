@@ -41,13 +41,13 @@ function wireToApi(item: PersonWire): Person {
 }
 
 export async function list(fetch: Fetch): Promise<Person[]> {
-	const resp = await fetch(`https://swapi.dev/api/people`);
+	const resp = await fetch(`/api/people`);
 	const items = await resp.json();
 	return items.results.map(wireToApi);
 }
 
 export async function get(fetch: Fetch, id: string): Promise<Person> {
-	const resp = await fetch(`https://swapi.dev/api/people/${id}`);
+	const resp = await fetch(`/api/people/${id}`);
 	if (resp.ok) {
 		const item = await resp.json();
 		return wireToApi(item);

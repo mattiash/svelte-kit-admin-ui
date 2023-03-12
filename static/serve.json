@@ -1,0 +1,6 @@
+{
+  "redirects": [
+    { "source": "/api/people", "destination": "https://swapi.dev/api/people" },
+    { "source": "/api/people/:id", "destination": "https://swapi.dev/api/people/:id" }
+  ]
+}
